@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tamagotchi</title>
+    <script src="main.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!--
+    <div class = "gameMenuScreen">
+    <h1> Journey of Tama</h1>
+        <p> This is the first project of GA</p>
+        <h6> Enter your name to begin</h6>
+        <form>
+            <input type = "text" id="playerName" placeholder = "Enter Name"> <br>   
+            <button type = "Start">Let's start the game!</button>
+        </form>
+    </div>
+-->
+
+<!-- This is the story portion--> 
+<!--
+<div class = "storyScene">
+    <img id = "storyBackground" src = https://images.pexels.com/photos/942872/pexels-photo-942872.jpeg?cs=srgb&dl=pexels-messala-ciulla-942872.jpg&fm=jpg>
+        <form>
+            <div class = "storyTextCentered">
+                <div class = "mainStory">Once upon a time, </div>
+            <img id = "eggStage" src = https://static.wikia.nocookie.net/tamagotchi/images/0/04/Shirobabyegg2_t.gif/revision/latest?cb=20180611115257> <br>
+            <input type = "text" id = "tamaName" placeholder="Enter Tama's name">
+            <button type = "Submit">Submit</button>
+            </div>
+        </form>
+</div>
+
+-->
+
+
+<!-- This is the main game screen-->
+
+    <div class = "playerMenu">
+        <button class = "playerMenuBtn">Menu</button>
+        <div class = "playerMenuContent">
+            <a href = "#" id = "feedAction">Feed</a>
+            <a href = "#" id = "exerciseAction">Exercise</a>
+            <a href = "#" id = "playAction">Play</a>
+            <a href = "#" id = "cleanAction">Clean</a>
+            <a href = "#" id = "sleepAction">Sleep</a>
+            <a href = "#" id = "abandonAction">Abandon</a>
+        </div>
+    </div> 
+    <div class = "tamagotchiStatus">
+        <img id = "eggStage" src = https://static.wikia.nocookie.net/tamagotchi/images/0/04/Shirobabyegg2_t.gif/revision/latest?cb=20180611115257>
+    </div>
+    <div class = "monitorBars">
+        <p class = "health">Health <span>
+            <progress class = "healthBar" value = "200" max = "200"></progress> </span>
+        </p>
+        <p class = "hunger">Hunger <span>
+            <progress class = "hungerBar" value = "50" max = "50"></progress> </span>
+        </p>
+        <p class = "boredom">Boredom <span>
+            <progress class = "boredomBar" value = "50" max = "50"></progress> </span>
+        </p>
+        <p class = "tired">Tiredness <span>
+            <progress class = "sleepBar" value = "50" max = "50"></progress> </span>
+        </p>
+        <p class = "cleanness">Cleanness <span>
+            <progress class = "cleanBar" value = "50" max = "50"></progress> </span>
+        </p>
+    </div>
+</body>
+</html>
