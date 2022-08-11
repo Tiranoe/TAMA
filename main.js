@@ -55,7 +55,11 @@ loseBoredom(){
     setInterval(() => 
     {this.play -= 2;
     this.health -= 2;
-    document.querySelector('.boredomBar').value = this.play}, 1000);
+    document.querySelector('.boredomBar').value = this.play;
+    if (this.play === 0) {
+        alert('Test');
+        clearInterval()}
+    }, 1000);
 }
 loseSleep(){
     setInterval(() => 
@@ -72,10 +76,7 @@ loseCleanness(){
 showStats(){
     setInterval(() => {
     console.log(this.health);
-    if(tmgch.death()){
-        alert('Uh-oh, your Tamagotchi is DEAD');
-        clearInterval(showStats);
-    }}, 1000);
+            }, 1000);
 }
 loseHealth(){
     setInterval(() =>
@@ -87,7 +88,13 @@ loseHealth(){
 death(){
     if (this.health === 0 || this.sleep === 0 || this.hunger === 0 || this.play === 0)
     {
-        return true;
+        clearInterval(loseBoredom);
+        clearInterval(loseCleanness);
+        clearInterval(loseHealth);
+        clearInterval(loseHunger);
+        clearInterval(loseSleep);
+        clearInterval(showStats);
+        alert('Test 2');
     }
     else return false;
 }
@@ -138,6 +145,7 @@ tmgch.loseCleanness();
 tmgch.loseSleep();
 tmgch.loseHealth();
 tmgch.showStats();
+tmgch.death();
 
 //Function to check for death
 
