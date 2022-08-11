@@ -88,7 +88,7 @@ body {
     padding: 5px;
 }
 
-.progress {
-    position: absolute;
-    right: 5%;
+#abandonAction {
+    background-color: red;
+    color: yellow;
 }

@@ -78,7 +78,7 @@ loseHealth(){
     {document.querySelector('.healthBar').value = this.health;
     if(tmgch.death()){
         alert('Uh-oh, your Tamagotchi is DEAD');
-        clearInterval(loseHealth);
+        clearInterval();
     }
     }, 1000);
 }
@@ -99,7 +99,7 @@ feed(){
 }
 exercise(){
     this.hunger -= 1;
-    this.cleanness -= 1;
+    this.clean -= 1;
     this.health += 2;
 }
 cleanUp(){
@@ -115,6 +115,15 @@ playing(){
     this.play += 10;
     this.health += 10;
 }
+abandon(){
+    this.health = 0;
+    this.hunger = 0;
+    this.sleep = 0;
+    this.play = 0;
+    this.clean = 0;
+    alert('You just want to see the world burn.. Shame on you');
+}
+
 }
 
 let tmName = document.querySelector('.tamagotchiName')
@@ -128,6 +137,7 @@ tmgch.loseBoredom();
 tmgch.loseCleanness();
 tmgch.loseSleep();
 tmgch.loseHealth();
+tmgch.showStats();
 
 //Function to check for death
 
@@ -158,7 +168,9 @@ playBtn.addEventListener('click', function() {
 
 // Abandon your Tamagotchi
     // This option will restart the game
-    // And maybe I can add something extra to make the difficulty harder to shame the user
+abandonBtn.addEventListener('click', function() {
+    tmgch.abandon();
+})
 
 
 //Need to make functions for each page that user will see per option
