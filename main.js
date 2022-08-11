@@ -80,8 +80,9 @@ loseHealth(){
 
 //death function using IF statement
 death(){
-    if (this.health === 0 || this.sleep === 0 || this.hunger === 0 || this.play === 0){
-        alert('Uh-Oh! Your tamagotchi is dead!');
+    if (this.health === 0 || this.sleep === 0 || this.hunger === 0 || this.play === 0)
+    {
+        return true;
     }
     else return false;
 }
@@ -123,9 +124,13 @@ tmgch.loseCleanness();
 tmgch.loseSleep();
 tmgch.loseHealth();
 tmgch.showStats();
+
+let checkForDeath = setInterval(function(){
 if(tmgch.death()){
     alert('Uh-oh, your Tamagotchi is DEAD');
-};
+    clearInterval(drain);    
+}
+}, 1000);
 
 console.log(tmgch)
 
