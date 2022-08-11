@@ -75,7 +75,12 @@ showStats(){
 }
 loseHealth(){
     setInterval(() =>
-    {document.querySelector('.healthBar').value = this.health}, 1000);
+    {document.querySelector('.healthBar').value = this.health;
+    if(tmgch.death()){
+        alert('Uh-oh, your Tamagotchi is DEAD');
+        clearInterval(loseHealth);
+    }
+    }, 1000);
 }
 
 //death function using IF statement
@@ -123,14 +128,9 @@ tmgch.loseBoredom();
 tmgch.loseCleanness();
 tmgch.loseSleep();
 tmgch.loseHealth();
-tmgch.showStats();
 
-let checkForDeath = setInterval(function(){
-if(tmgch.death()){
-    alert('Uh-oh, your Tamagotchi is DEAD');
-    clearInterval(drain);    
-}
-}, 1000);
+//Function to check for death
+
 
 console.log(tmgch)
 
@@ -159,9 +159,6 @@ playBtn.addEventListener('click', function() {
 // Abandon your Tamagotchi
     // This option will restart the game
     // And maybe I can add something extra to make the difficulty harder to shame the user
-
-
-//Death IF/ELSE statement
 
 
 //Need to make functions for each page that user will see per option
