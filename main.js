@@ -70,16 +70,16 @@ loseCleanness(){
     document.querySelector('.cleanBar').value = this.clean}, 1000);
 }
 showStats(){
-    setInterval(() =>
-    console.log(this.health), 1000);
+    setInterval(() => {
+    console.log(this.health);
+    if(tmgch.death()){
+        alert('Uh-oh, your Tamagotchi is DEAD');
+        clearInterval(showStats);
+    }}, 1000);
 }
 loseHealth(){
     setInterval(() =>
     {document.querySelector('.healthBar').value = this.health;
-    if(tmgch.death()){
-        alert('Uh-oh, your Tamagotchi is DEAD');
-        clearInterval();
-    }
     }, 1000);
 }
 
