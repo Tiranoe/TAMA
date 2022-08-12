@@ -41,6 +41,7 @@ body {
     padding: 10px;
     font-size: 20px;
     width: 120px;
+    margin: -10px 0 0 0;
   }
 .playerMenu {
     position: relative;
@@ -91,4 +92,12 @@ body {
 #abandonAction {
     background-color: red;
     color: yellow;
+}
+
+.gameButton {
+    position: absolute;
+    background-color: white;
+    right: 5%;
+    top: 40%;
+    padding: 5px;
 }

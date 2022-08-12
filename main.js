@@ -3,10 +3,9 @@
 //Testing this to see if I can connect the value from HTML file to update on javascript
 let hunger_Max = document.querySelector('.hungerBar').value;
 //console.log(hunger_Max) => shows as 50
-
-let boredom_Max = 50;
-let tired_Max = 50;
-let cleanness_Max = 50;
+let boredom_Max = document.querySelector('.boredomBar').value;
+let tired_Max = document.querySelector('.sleepBar').value;
+let cleanness_Max = document.querySelector('.cleanBar').value;
 let health_Max = hunger_Max + boredom_Max + tired_Max + cleanness_Max
 //console.log(health_Max) => shows as 200
         //Question: which way to list the variable is better?
@@ -16,6 +15,8 @@ let playerName = document.getElementById('playerName');
 let tamaName = document.querySelector('#tamagotchiName');
 
 // Button Constraints
+const startBtn = document.querySelector('start-button');
+const resetBtn = document.querySelector('reset-button');
 const feedBtn = document.querySelector('#feedAction');
 const exerciseBtn = document.querySelector('#exerciseAction');
 const playBtn = document.querySelector('#playAction');
@@ -29,6 +30,10 @@ const hungerLevel = document.querySelector('.hungerBar').value;
 const boredomLevel = document.querySelector('.boredomBar').value;
 const tiredLevel = document.querySelector('.sleepBar').value;
 const cleannessLevel = document.querySelector('.cleanBar').value;
+
+
+//game start function invoke
+
 
 // Possibly use the Object Oriented Programming to keep track of Tamagotchi's condition?
     // Tamagotchi (your pet) will be starting as an "egg" status
@@ -57,8 +62,8 @@ loseBoredom(){
     this.health -= 2;
     document.querySelector('.boredomBar').value = this.play;
     if (this.play === 0) {
-        alert('Test');
-        clearInterval()}
+        alert('Your tamagotchi died from Boredom');
+        clearInterval();}
     }, 1000);
 }
 loseSleep(){
@@ -88,13 +93,7 @@ loseHealth(){
 death(){
     if (this.health === 0 || this.sleep === 0 || this.hunger === 0 || this.play === 0)
     {
-        clearInterval(loseBoredom);
-        clearInterval(loseCleanness);
-        clearInterval(loseHealth);
-        clearInterval(loseHunger);
-        clearInterval(loseSleep);
-        clearInterval(showStats);
-        alert('Test 2');
+       return true;
     }
     else return false;
 }
@@ -135,22 +134,21 @@ abandon(){
 
 let tmName = document.querySelector('.tamagotchiName')
 let tmgch = new Tamagotchi(tmName)
-
+console.log(tmgch);
 //Invoking functions to continously lose health
 // Starts down the timer countdown for each health factors
 // Most likely want to display all Health factors for user to continue to keep track
-tmgch.loseHunger();
-tmgch.loseBoredom();
-tmgch.loseCleanness();
-tmgch.loseSleep();
-tmgch.loseHealth();
-tmgch.showStats();
-tmgch.death();
-
-//Function to check for death
 
 
-console.log(tmgch)
+//Start button starts tamagotchi health to go down
+startBtn.addEventListener('click', function() {
+    tmgch.loseHealth();
+});
+
+resetBtn.addEventListener('click', function(evt) {
+    tmgch.loseBoredom();
+    tmgch.loseCleanness();
+});
 
 // Menu bar to access all options (Player options)
 // Feed
