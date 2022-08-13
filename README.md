@@ -28,19 +28,19 @@ The game that I will be creating is called TAMAGOTCHI
             - Abandoning your Tamagotchi (But why would you choose to do this?)
 
     
-![alt text])(http://github.com/Tiranoe/TAMA/assets/Beginning.png)
+![alt text](http://github.com/Tiranoe/TAMA/assets/Beginning.png)
 
 The game will begin with bunch of menu
     You just have to press "Start" to start the game
 
     
-![alt text])(http://github.com/Tiranoe/TAMA/assets/Options.png)
+![alt text](http://github.com/Tiranoe/TAMA/assets/Options.png)
 
 If you hover your mouse over the "Menu", you will gain the ability to choose what action you would want to take to your Tamagotchi
 (Abandon option is indicated in red - because why would you?)
     
     
-![alt text])(http://github.com/Tiranoe/TAMA/assets/Health bar goes down.png)
+![alt text](http://github.com/Tiranoe/TAMA/assets/Health bar goes down.png)
 
 This picture is just showing how the health bar goes down continously
     
