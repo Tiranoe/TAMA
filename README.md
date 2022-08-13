@@ -11,26 +11,31 @@ The game that I will be creating is called TAMAGOTCHI
 <Technologies Used> I am using HTML, CSS, Javascript.
 
 <Getting Started>
-    Link to the game: DNE (Does not exist yet) - 08/07/22
+    Link to the game: 
+
 
     Instructions in how to play the game:
         One day, You found a random EGG in the middle of the road!
         There is no one else around you, so you pick up the egg and take it back to your home and begin to take care of the egg.
 
-        The goal of this game is to continue to feed your "Pet" as time goes on until it becomes an adult being. Through the stages, you will need to continue to take care of your pet by:
+        The goal of this game is to continue to feed your "Pet" as time goes on as long as you can. 
+        Through the stages, you will need to continue to take care of your pet by:
             - Feeding Food
             - Sleeping
             - Cleaning up after they poop
             - Exercising
             - Playing games
-            - Abandoning your Tamagotchi (You just want to watch the world burn huh)
+            - Abandoning your Tamagotchi (But why would you choose to do this?)
+
+
 
 
 <Next Steps>
-    - Outline how the game is going to go
-        Use the Figma website to draw a map of map guide
+    - Here is the wireframe used to plan the game
+
+![alt text])(./)
     
-    - Searching for images to use to display for each of the user's decision.
+    - Also made a map of how the interaction between user and code will be like
 
     ***Figure out the time variable on how long user needs to play to complete the game, and also amount of time tamagotchi has before dying without attention.
 
@@ -38,7 +43,9 @@ The game that I will be creating is called TAMAGOTCHI
         - how the user can access the options of what to do with Tamagotchi
 
 
-Sources:
+
+
+<Credit goes to>
 Dropdown list - https://www.w3schools.com/howto/howto_css_dropdown.asp
 
 Health bar - https://stackoverflow.com/questions/20277052/how-to-make-a-health-bar
