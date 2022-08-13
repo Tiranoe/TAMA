@@ -1,7 +1,7 @@
 
 The game that I will be creating is called TAMAGOTCHI
 
-<Game's Title> How to raise a baby tutorial
+<Game's Title> Tamagotchi
 
 <Screentshots>
 ![alt text](https://m.media-amazon.com/images/I/61odvUyLn8L._AC_SX679_.jpg)
