@@ -97,6 +97,7 @@ body {
 .gameButton {
     position: absolute;
     background-color: white;
+    text-align: center;
     right: 5%;
     top: 40%;
     padding: 5px;

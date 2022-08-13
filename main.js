@@ -15,8 +15,8 @@ let playerName = document.getElementById('playerName');
 let tamaName = document.querySelector('#tamagotchiName');
 
 // Button Constraints
-const startBtn = document.querySelector('start-button');
-const resetBtn = document.querySelector('reset-button');
+const startBtn = document.querySelector('.start-button');
+const resetBtn = document.querySelector('.reset-button');
 const feedBtn = document.querySelector('#feedAction');
 const exerciseBtn = document.querySelector('#exerciseAction');
 const playBtn = document.querySelector('#playAction');
@@ -39,44 +39,57 @@ const cleannessLevel = document.querySelector('.cleanBar').value;
     // Tamagotchi (your pet) will be starting as an "egg" status
 
 class Tamagotchi {
-    constructor (name, health, hunger, play, sleep, clean) {
+    constructor (name, health, hunger, play, sleep, clean, interval) {
     this.name = document.querySelector('#tamagotchiName');
     this.health = health_Max;
     this.hunger = hunger_Max;
     this.play = boredom_Max;
     this.sleep = tired_Max;
     this.clean = cleanness_Max;
+    this.interval = 0;
     }
 
 // implement all updating values and adding it to sum.
     //function to lose each stats constantly
 loseHunger(){
-    setInterval(() => 
-    {this.hunger -= 2;
-    this.health -= 2;
-    document.querySelector('.hungerBar').value = this.hunger}, 1000);
+    setInterval(() => {
+    this.hunger -= 5;
+    this.health -= 5;
+    document.querySelector('.hungerBar').value = this.hunger;
+    if (this.hunger === 0){
+        alert('Your tamagotchi died from hunger');
+        this.abandon();
+    }}, 1000);
 }
 loseBoredom(){
-    setInterval(() => 
-    {this.play -= 2;
+    setInterval(() => {
+    this.play -= 2;
     this.health -= 2;
     document.querySelector('.boredomBar').value = this.play;
-    if (this.play === 0) {
-        alert('Your tamagotchi died from Boredom');
-        clearInterval();}
-    }, 1000);
+    if (this.play === 0){
+        alert('Your tamagotchi died from boredom');
+        this.abandon();
+    }}, 1000);
 }
 loseSleep(){
-    setInterval(() => 
-    {this.sleep -= 2;
-    this.health -= 2;
-    document.querySelector('.sleepBar').value = this.sleep}, 1000);
+    setInterval(() => {
+    this.sleep -= 3;
+    this.health -= 3;
+    document.querySelector('.sleepBar').value = this.sleep;
+    if (this.sleep === 0){
+        alert('Your tamagotchi died from lack of sleep');
+        this.abandon();
+    }}, 1000);
 }
 loseCleanness(){
-    setInterval(() => 
-    {this.clean -= 2;
-    this.health -= 2;
-    document.querySelector('.cleanBar').value = this.clean}, 1000);
+    setInterval(() => {
+    this.clean -= 4;
+    this.health -= 4;
+    document.querySelector('.cleanBar').value = this.clean
+    if (this.clean === 0){
+        alert('Your tamagotchi died from being nasty');
+        this.abandon();
+    }}, 1000);
 }
 showStats(){
     setInterval(() => {
@@ -85,13 +98,14 @@ showStats(){
 }
 loseHealth(){
     setInterval(() =>
-    {document.querySelector('.healthBar').value = this.health;
-    }, 1000);
+    {this.health = this.clean + this.hunger + this.sleep + this.play;
+    document.querySelector('.healthBar').value = this.health }, 1000);
 }
 
 //death function using IF statement
+//didn't end up using this because I wanted to give different alert for each death.
 death(){
-    if (this.health === 0 || this.sleep === 0 || this.hunger === 0 || this.play === 0)
+    if ((this.health === 0) ||  (this.sleep === 0) || (this.hunger === 0) || (this.play === 0) || (this.clean === 0))
     {
        return true;
     }
@@ -118,8 +132,8 @@ sleeping(){
     this.health += 2;
 }
 playing(){
-    this.play += 10;
-    this.health += 10;
+    this.play += 4;
+    this.health += 4;
 }
 abandon(){
     this.health = 0;
@@ -129,7 +143,18 @@ abandon(){
     this.clean = 0;
     alert('You just want to see the world burn.. Shame on you');
 }
-
+reset(){
+    this.hunger = hunger_Max;
+    document.querySelector('.hungerBar').value = this.hunger;
+    this.sleep = tired_Max;
+    document.querySelector('.sleepBar').value = this.sleep;
+    this.play = boredom_Max;
+    document.querySelector('.boredomBar').value = this.play;
+    this.clean = cleanness_Max;
+    document.querySelector('.cleanBar').value = this.clean;
+    this.health = health_Max;
+    document.querySelector('.healthBar').value = this.health;
+}
 }
 
 let tmName = document.querySelector('.tamagotchiName')
@@ -142,12 +167,19 @@ console.log(tmgch);
 
 //Start button starts tamagotchi health to go down
 startBtn.addEventListener('click', function() {
-    tmgch.loseHealth();
-});
+        tmgch.loseHealth();
+        tmgch.loseBoredom();
+        tmgch.loseCleanness();
+        tmgch.loseHunger();
+        tmgch.loseSleep();
+        startBtn.disabled = true;
+    });
 
-resetBtn.addEventListener('click', function(evt) {
-    tmgch.loseBoredom();
-    tmgch.loseCleanness();
+
+//tmgch.showStats();
+
+resetBtn.addEventListener('click', function() {
+    tmgch.reset();
 });
 
 // Menu bar to access all options (Player options)
@@ -177,35 +209,3 @@ playBtn.addEventListener('click', function() {
 abandonBtn.addEventListener('click', function() {
     tmgch.abandon();
 })
-
-
-//Need to make functions for each page that user will see per option
-
-
-// Game winning condition
-// Timer Countdown for Tamagotchi if it manages to become adult
-
-
-// User gets the ability to add their name to Top 10 list according to how well Tamagotchi has grown
-
-
-// Add secret achievements when user raises tamagotchi with 100 percent fill with all health factors
-
-
-// Give User choice to restart the game
-
-
-//running functions
-
-
-
-/*
-HTML - 
-<a href="#" id="action-sleep">Sleep</a>
-
-
-JAVASCRIPT - 
-const feedBtn = document.querySelector("#action-feed");
-
-
-*/
