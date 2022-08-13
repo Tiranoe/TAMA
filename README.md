@@ -3,11 +3,6 @@ The game that I will be creating is called TAMAGOTCHI
 
 <Game's Title> Tamagotchi
 
-<Screentshots>
-![alt text](https://m.media-amazon.com/images/I/61odvUyLn8L._AC_SX679_.jpg)
-
-![alt text](https://twitter.com/lord_arse/status/1369422271115362305)
-
 <Technologies Used> I am using HTML, CSS, Javascript.
 
 <Getting Started>
